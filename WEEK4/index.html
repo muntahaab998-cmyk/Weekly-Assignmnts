@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UCID Validation</title>
+</head>
+
+<body>
+
+    <form id="ucidForm">
+        <input
+            type="text"
+            id="ucid"
+            name="ucid"
+            placeholder="Enter UCID"
+            title="A UCID is a sequence of letters followed by zero to three digits."
+        >
+
+        <label for="ucid">UCID</label>
+
+        <br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        const validUCIDs = [
+            "mc123",
+            "student12",
+            "test123",
+            "njit1"
+        ];
+
+        document.getElementById("ucidForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const ucid = document.getElementById("ucid").value.trim();
+
+            // UCID must contain letters followed by zero to three digits
+            const ucidPattern = /^[A-Za-z]+[0-9]{0,3}$/;
+
+            if (!ucidPattern.test(ucid)) {
+                alert("UCID DOES NOT CONFORM TO VALID FORMAT");
+            } else if (validUCIDs.includes(ucid)) {
+                alert("VALID UCID FORMAT AND UCIID FOUND");
+            } else {
+                alert("VALID UCID FORMAT BUT INVALID UCID");
+            }
+        });
+    </script>
+
+</body>
+</html>

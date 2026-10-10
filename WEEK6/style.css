@@ -1,0 +1,21 @@
+h1 {
+    background-color: purple;
+    color: white;
+    height: 60px;
+    width: 300px;
+    border: 2px solid black;
+    display: none;
+    padding: 10px;
+}
+
+p {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+input {
+    border: none;
+    color: darkblue;
+    background-color: white;
+    cursor: pointer;
+}
